@@ -25,6 +25,8 @@ apt-get install -f -y
 
 raspi-config nonint do_memory_split 256
 
+[ -f /etc/xdg/autostart/xcompmgr.desktop ] && rm -rf /etc/xdg/autostart/xcompmgr.desktop
+
 sync
 
 echo "Successful installation -> Please reboot system"
