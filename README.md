@@ -65,7 +65,7 @@
  | -R x,y,width,height | 0,0,1920,1080 | 分辨率设置 |
  | -window | 无 | 窗口化 |
  | -no-cursor |	无 | 隐藏鼠标 |
- | -no-scroll-bars | 无 | 隐藏滚动条 |
+ | -no-scrollbars | 无 | 隐藏滚动条 |
  | -remote-debug | 无 | 远程调试 |
  | -gpu | 无 | 显示 GPU 信息 |
  | -webpage | http://127.0.0.1:8080 | 展示页 |
