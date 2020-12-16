@@ -12,6 +12,7 @@
 [支持系统](#支持系统)  
 [目录结构](#目录结构)  
 [安装方法](#安装方法)  
+[开机启动](#开机启动)  
 
 ---
 ### 支持硬件
@@ -75,8 +76,46 @@
  /usr/bin/webplay -R 0,0,1920,1080 -webpage http://www.baidu.com
  ```
  
- ***4. 查看日志***
+ ***3. 查看日志***
  ```
  tail -n 100 /dev/shm/webplay.log
  ```
  
+ ---
+ #### 开机启动
+ 
+ > 安装 xterm 
+ ```
+ apt-get install xterm
+ ```
+ 
+ > 修改 /etc/X11/xinit/xinitrc 
+ ```
+ #!/bin/sh
+ 
+ xset -display :0 s noblank
+ xset -display :0 s noexpose
+ xset -display :0 s off
+ xset -display :0 -dpms
+
+ #exec /usr/bin/uxterm -geometry 1600x600+0+0 -e 'xhost +;bash;' # 调试
+ exec /usr/bin/uxterm -geometry 1600x600+0+0 -e '/usr/bin/webplayrun -webpage http://www.baidu.com'
+ ```
+
+ > 创建 /lib/systemd/system/webplay.service
+ ```
+ [Unit]
+ Description=WebPlay Display Manager
+
+ [Service]
+ ExecStart=/usr/bin/startx
+ Restart=always
+ ```
+ 
+ > 移除连接后建立新连接
+ ```
+ rm -f /etc/systemd/system/display-manager.service
+ ln -s /lib/systemd/system/webplay.service /etc/systemd/system/display-manager.service
+ ```
+ 
+ ---
