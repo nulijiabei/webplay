@@ -99,7 +99,7 @@
  xset -display :0 -dpms
 
  #exec /usr/bin/uxterm -geometry 1600x600+0+0 -e 'xhost +;bash;' # 调试
- exec /usr/bin/uxterm -geometry 1600x600+0+0 -e '/usr/bin/webplayrun -webpage http://www.baidu.com'
+ exec /usr/bin/uxterm -geometry 1600x600+0+0 -e '/usr/bin/webplayrun' # 启动
  ```
 
  > 创建 /lib/systemd/system/webplay.service
