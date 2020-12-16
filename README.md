@@ -64,7 +64,9 @@
  | -version | 无 | 版本号 |
  | -R x,y,width,height | 0,0,1920,1080 | 分辨率设置 |
  | -window | 无 | 窗口化 |
- | -nocursor |	无 | 隐藏鼠标 |
+ | -no-cursor |	无 | 隐藏鼠标 |
+ | -no-scroll-bars | 无 | 隐藏滚动条 |
+ | -remote-debug | 无 | 远程调试 |
  | -gpu | 无 | 显示 GPU 信息 |
  | -webpage | http://127.0.0.1:8080 | 展示页 |
  
@@ -79,6 +81,14 @@
  ***3. 查看日志***
  ```
  tail -n 100 /dev/shm/webplay.log
+ ```
+ 
+ ***4. 远程调试***
+ ```
+ // 开启远程调试
+ /usr/bin/webplay -remote-debug -webpage http://www.baidu.com
+ // 远程访问调试
+ 使用基于 WebEngine 或 Chrome 浏览器访问 http://192.168.XXX.XXX:1112 即可
  ```
  
  ---
