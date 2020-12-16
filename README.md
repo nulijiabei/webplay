@@ -68,11 +68,11 @@
  | -webpage | http://127.0.0.1:8080 | 展示页 |
  
  ```
- // 通过启动脚本启动程序
+ // 使用脚本启动(可以编辑脚本内参数) ...
  /usr/bin/webplayrun
  
- // 指定参数启动程序 ...
- /usr/bin/webplayrun -R 0,0,1920,1080 -webpage http://www.baidu.com
+ // 使用程序启动 ...
+ /usr/bin/webplay -R 0,0,1920,1080 -webpage http://www.baidu.com
  ```
  
  ***4. 查看日志***

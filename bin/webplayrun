@@ -1,8 +1,3 @@
 #!/bin/bash
 
-/usr/bin/webplay \
-	--no-sandbox \
-	--enable-gpu-rasterization \
-	--enable-native-gpu-memory-buffers \
-	--enable-checker-imaging \
-	$@
+/usr/bin/webplay -R 0,0,1366,768 -webpage http://www.baidu.com $@
